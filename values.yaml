@@ -2367,7 +2367,7 @@ dags:
     # git repo clone url
     # ssh example: git@github.com:apache/airflow.git
     # https example: https://github.com/apache/airflow.git
-    repo: https://github.com/HajiMohamedRufai/deb-project-airflow
+    repo: https://github.com/HajiMohamedRufai/deb-project-airflow.git
     branch: main
     rev: HEAD
     depth: 1
