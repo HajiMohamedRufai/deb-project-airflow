@@ -5,7 +5,7 @@ from datetime import datetime
 
 # Define default_args to specify the DAG's behavior
 default_args = {
-    'owner': 'your_name',
+    'owner': 'hajirufai',
     'start_date': datetime(2023, 1, 1),
     'retries': 1,
 }
@@ -21,23 +21,4 @@ dag = DAG(
 # Define tasks
 start_task = DummyOperator(task_id='start', dag=dag)
 
-def extract():
-    # Code to extract data from a source
-    print("Extracting data...")
-
-def transform():
-    # Code to transform the extracted data
-    print("Transforming data...")
-
-def load():
-    # Code to load the transformed data into a destination
-    print("Loading data...")
-
-extract_task = PythonOperator(
-    task_id='extract_data',
-    python_callable=extract,
-    dag=dag,
-)
-
-transform_task = PythonOperator(
    
