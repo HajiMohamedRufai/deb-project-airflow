@@ -34,4 +34,4 @@ load_task = PythonOperator(
 )
 
 # Define the order of task execution
-start_task >> extract_task >> transform_task >> load_task
+extract_task >> transform_task >> load_task
