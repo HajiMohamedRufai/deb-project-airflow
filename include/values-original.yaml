@@ -261,7 +261,7 @@ rbac:
 
 # Airflow executor
 # One of: LocalExecutor, LocalKubernetesExecutor, CeleryExecutor, KubernetesExecutor, CeleryKubernetesExecutor
-executor: "LocalExecutor"
+executor: "CeleryExecutor"
 
 # If this is true and using LocalExecutor/KubernetesExecutor/CeleryKubernetesExecutor, the scheduler's
 # service account will have access to communicate with the api-server and launch pods.
@@ -1238,7 +1238,7 @@ webserver:
   webserverConfigConfigMapName: ~
 
   service:
-    type: LoadBalancer
+    type: ClusterIP
     ## service annotations
     annotations: {}
     ports:
@@ -2362,20 +2362,20 @@ dags:
     ## optional subpath for dag volume mount
     subPath: ~
   gitSync:
-    enabled: true
+    enabled: false
 
     # git repo clone url
     # ssh example: git@github.com:apache/airflow.git
     # https example: https://github.com/apache/airflow.git
-    repo: https://github.com/HajiMohamedRufai/deb-project-airflow.git
-    branch: main
+    repo: https://github.com/apache/airflow.git
+    branch: v2-2-stable
     rev: HEAD
     depth: 1
     # the number of consecutive failures allowed before aborting
     maxFailures: 0
     # subpath within the repo where dags are located
     # should be "" if dags are at repo root
-    subPath: "dags"
+    subPath: "tests/dags"
     # if your repo needs a user name password
     # you can load them to a k8s secret like the one below
     #   ---
