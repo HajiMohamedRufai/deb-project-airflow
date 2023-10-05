@@ -1,7 +1,0 @@
-USER-SUPPLIED VALUES:
-airflow:
-  baseUrl: http://127.0.0.1:8080
-  cloneDagFilesFromGit:
-    branch: main
-    enabled: true
-    repository: https://github.com/HajiMohamedRufai/deb-project-airflow.git
